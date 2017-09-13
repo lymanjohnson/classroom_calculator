@@ -56,7 +56,10 @@ end
 
 # Return the average for the entire class.
 def class_average(grade_hash)
-  skip
+  scores = averages(grade_hash)
+  result = 0
+  scores.each {|k,v| result += v}
+  result /= scores.length
 end
 
 # Return an array of the top `number_of_students` students.
