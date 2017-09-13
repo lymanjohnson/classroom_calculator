@@ -24,7 +24,8 @@ end
 # TIP: To convert an array like [[:indiana, 90], [:nevada, 80]] to a hash,
 # use .to_h. Also look at Hash#transform_values.
 def averages(grade_hash)
-  skip
+# a_new_hash = my_hash.inject({}) { |h, (k, v)| h[k] = v.upcase; h }
+averages = grade_hash.inject({}) { |h, (k,v)| h[k] = v.reduce{|x,n| x += n}/v.length ; h}
 end
 
 # Return a letter grade for a numerical score.
