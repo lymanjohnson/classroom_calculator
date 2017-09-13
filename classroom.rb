@@ -51,7 +51,7 @@ end
 # Return a hash of students and their final letter grade, as determined
 # by their average.
 def final_letter_grades(grade_hash)
-  skip
+  averages = grade_hash.inject({}) { |h, (k,v)| h[k] = letter_grade(v.reduce{|x,n| x += n}/v.length) ; h}
 end
 
 # Return the average for the entire class.
