@@ -35,7 +35,17 @@ end
 # 60-69 => D
 # < 60 => F
 def letter_grade(score)
-  skip
+  if score >= 90
+    "A"
+  elsif score.between?(80,89)
+    "B"
+  elsif score.between?(70,79)
+    "C"
+  elsif score.between?(60,69)
+    "D"
+  else
+    "F"
+  end
 end
 
 # Return a hash of students and their final letter grade, as determined
