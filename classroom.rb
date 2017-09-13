@@ -64,5 +64,7 @@ end
 
 # Return an array of the top `number_of_students` students.
 def top_students(grade_hash, number_of_students)
-  skip
+  scores = averages(grade_hash)
+  shortlist = scores.sort_by{|k,v| v}.reverse.take(number_of_students)
+  names = shortlist.map{|k,v| k}
 end
